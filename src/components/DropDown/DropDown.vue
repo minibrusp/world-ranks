@@ -4,7 +4,7 @@
   >
     <select
       name="sortby"
-      class="border-bunker text-link-water text-xs font-bold border-2 bg-black-pearl px-3 py-[10px] rounded-xl w-full tracking-wider appearance-none"
+      class="border-bunker text-link-water text-xs font-bold border-2 bg-black-pearl px-3 py-[10px] rounded-xl w-full tracking-wider appearance-none cursor-pointer"
       title="sort by"
     >
       <option value="population">Population</option>
