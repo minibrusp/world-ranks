@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-1 justify-center items-start">
+  <div class="flex flex-wrap gap-1 justify-between items-center">
     <p class="font-semibold">Found 234 countries</p>
     <Search />
   </div>
