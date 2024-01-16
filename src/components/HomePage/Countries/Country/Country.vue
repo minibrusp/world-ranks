@@ -3,15 +3,18 @@
   <tr class="text-link-water">
     <td class="py-2">
       <img
-        src="https://flagcdn.com/w320/to.png"
-        alt="flag"
+        :src="country.flags.png"
+        :alt="country.flags.alt"
         class="max-w-[50px] min-h-[38px] rounded"
       />
     </td>
-    <td>China</td>
-    <td>1,402,112,000</td>
-    <td>9,706,961</td>
+    <td>{{ country.cca3 }}</td>
+    <td>{{ numeral(country.population).format('0.000a') }}</td>
+    <td>{{ numeral(country.area).format('0.000a') }}</td>
   </tr>
 </template>
 
-<script setup></script>
+<script setup>
+import numeral from 'numeral'
+defineProps(['country'])
+</script>

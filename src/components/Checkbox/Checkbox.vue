@@ -3,9 +3,9 @@
   <label class="flex justify-start items-center gap-2 cursor-pointer">
     <input
       type="checkbox"
-      name="status"
-      :value="props.value"
+      :name="name"
       class="peer appearance-none relative w-[22px] h-[22px] border-raven border-2 bg-black-pearl rounded-[4px] cursor-pointer shrink-0 checked:border-royal-blue checked:bg-royal-blue"
+      @change="changeHandler"
     />
     <span class="text-link-water text-[13px] font-medium">{{ props.label }}</span>
     <svg
@@ -25,5 +25,5 @@
 </template>
 
 <script setup>
-const props = defineProps(['label', 'value'])
+const props = defineProps(['label', 'name', 'changeHandler'])
 </script>
