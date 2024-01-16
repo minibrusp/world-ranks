@@ -7,6 +7,7 @@ export default {
         'be-vietname-pro': ['Be Vietnam Pro', 'sans-serif']
       },
       colors: {
+        'black-russian': '#18191B',
         'black-pearl': '#1B1D1F',
         bunker: '#282B30',
         'royal-blue': '#4E80EE',

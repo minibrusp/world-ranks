@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import Search from '@/components/Search'
 import { useCountriesStore } from '@/stores/CountriesStore'
 import { storeToRefs } from 'pinia'
@@ -16,10 +16,10 @@ const countriesStore = useCountriesStore()
 const searchedValue = ref(null)
 
 const searchHandler = debounce(() => {
-  countriesStore.search = ''
-  if (!searchedValue.value) return
   countriesStore.search = searchedValue.value
 }, 300)
+
+watch(searchedValue, searchHandler)
 
 const { getTotalCountries } = storeToRefs(countriesStore)
 </script>

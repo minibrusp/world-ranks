@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 </script>
 
 <template>
-  <div class="font-be-vietname-pro bg-black-pearl">
+  <div class="font-be-vietname-pro bg-black-russian min-h-screen">
     <Header />
     <RouterView />
   </div>

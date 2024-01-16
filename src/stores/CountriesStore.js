@@ -12,22 +12,12 @@ export const useCountriesStore = defineStore('countriesStore', {
     search: ''
   }),
   getters: {
-    searchedCountry() {
-      if (!this.search) return
-      return this.countries.filter((country) => {
-        return (
-          country.name.common.toLowerCase() == this.search.toLowerCase() ||
-          country.region.toLowerCase() == this.search.toLowerCase() ||
-          country.subregion.toLowerCase() == this.search.toLowerCase()
-        )
-      })
-    },
     sortedCountries() {
       this.loading = true
       let clonedCountry = _.cloneDeep(this.countries)
       switch (this.sortBy) {
         case 'name':
-          clonedCountry.sort()
+          clonedCountry.sort((a, b) => a.name.common.localeCompare(b.name.common))
           break
         case 'population':
           clonedCountry.sort((a, b) => b.population - a.population)
@@ -53,6 +43,16 @@ export const useCountriesStore = defineStore('countriesStore', {
         return this.filteredRegionCountries.filter((country) => country.independent == true)
       if (this.unMember)
         return this.filteredRegionCountries.filter((country) => country.unMember == true)
+    },
+    searchedCountry() {
+      if (!this.search) return this.filteredCountries
+      return this.filteredCountries.filter((country) => {
+        return (
+          country.name.common.toLowerCase() == this.search.toLowerCase() ||
+          country.region.toLowerCase() == this.search.toLowerCase() ||
+          country.subregion?.toLowerCase() == this.search?.toLowerCase()
+        )
+      })
     },
     getTotalCountries() {
       return this.filteredCountries.length

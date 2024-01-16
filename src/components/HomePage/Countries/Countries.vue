@@ -14,7 +14,7 @@
 
     <Country
       v-else
-      v-for="country in filteredCountries"
+      v-for="country in searchedCountry"
       :key="country.name.common"
       :country="country"
     />
@@ -29,7 +29,7 @@ import { storeToRefs } from 'pinia'
 
 const countriesStore = useCountriesStore()
 
-const { filteredCountries } = storeToRefs(countriesStore)
+const { searchedCountry } = storeToRefs(countriesStore)
 
 // fetch countries
 countriesStore.getCountries()

@@ -1,6 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div>
+  <div
+    class="sm:flex sm:flex-col sm:justify-start sm:items-start sm:mt-6 sm:mb-[6px] sm:max-w-[640px] lg:mt-0 lg:max-w-[203px] xl:max-w-[260px]"
+  >
     <!-- sort by  -->
     <Sort />
     <!-- region  -->

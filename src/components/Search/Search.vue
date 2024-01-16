@@ -8,7 +8,6 @@
       class="text-sm font-medium w-full border-transparent bg-transparent outline-none text-link-water placeholder:text-raven"
       type="search"
       placeholder="Search by Name, Region, Subregion"
-      @keyup="searchHandler"
       v-model="model"
     />
   </label>
