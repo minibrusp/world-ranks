@@ -2,11 +2,9 @@
 <template>
   <tr class="text-link-water">
     <td class="py-2 sm:pt-4">
-      <img
-        :src="country.flags.png"
-        :alt="country.flags.alt"
-        class="max-w-[50px] min-h-[38px] rounded sm:mr-4"
-      />
+      <div class="sm:mr-4">
+        <Flag :source="country.flags.png" :altText="country.flags.alt" size="small" />
+      </div>
     </td>
     <td>
       <span class="sm:hidden">{{ country.cca3 }}</span>
@@ -24,6 +22,7 @@
 </template>
 
 <script setup>
+import Flag from '@/components/Flag'
 import numeral from 'numeral'
 defineProps(['country'])
 </script>
