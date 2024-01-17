@@ -1,13 +1,18 @@
-<template>
-  <dl class="border-y border-bunker">
-    <CountryDetails title="Capital" detail="New Delhi" />
-    <CountryDetails title="Subregion" detail="Southern Asia" />
-    <CountryDetails title="Language" detail="English, Hindi, Tamil" />
-    <CountryDetails title="Currencies" detail="Indian rupee" />
-    <CountryDetails title="Continents" detail="Asia" />
-  </dl>
-</template>
-
 <script setup>
 import CountryDetails from '@/components/CountryPage/DetailsList/CountryDetails'
+import { useCountryStore } from '@/stores/CountryStore'
+import { storeToRefs } from 'pinia'
+
+const countryStore = useCountryStore()
+const { country, getLanguages, getCurrencies } = storeToRefs(countryStore)
 </script>
+
+<template>
+  <dl v-if="country" class="border-y border-bunker">
+    <CountryDetails title="Capital" :detail="country.capital?.toString()" />
+    <CountryDetails title="Subregion" :detail="country.subregion" />
+    <CountryDetails v-if="country.languages" title="Language" :detail="getLanguages" />
+    <CountryDetails v-if="country.currencies" title="Currencies" :detail="getCurrencies" />
+    <CountryDetails title="Continents" :detail="country.continents?.toString()" />
+  </dl>
+</template>

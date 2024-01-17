@@ -8,7 +8,7 @@
   />
   <img
     v-if="size === 'medium'"
-    class="max-w-[80px] min-h-[60px] rounded"
+    class="max-w-[80px] min-h-[60px] max-h-[60px] rounded"
     :src="source"
     :alt="altText"
   />
