@@ -6,7 +6,7 @@
     </div>
     <h1 class="text-3xl font-bold mb-[2px]">India</h1>
     <p>Republic of India</p>
-    <div class="flex flex-row flex-wrap justify-center items-center gap-2 my-9">
+    <div class="flex flex-row flex-wrap justify-center items-center gap-2 my-9 sm:gap-10 sm:my-10">
       <Stat title="Population" value="1,380,004,385" />
       <Stat title="Area(km&sup2;)" value="3,287,590" />
     </div>
