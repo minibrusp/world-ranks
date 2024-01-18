@@ -15,7 +15,7 @@ export default {
         'link-water': '#D2D5DA'
       },
       content: {
-        arrowDownIcon: 'url("src/assets/Expand_down.svg")'
+        arrowDownIcon: 'url("Expand_down.svg")'
       }
     }
   },
