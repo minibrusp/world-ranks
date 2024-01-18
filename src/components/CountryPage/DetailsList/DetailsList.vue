@@ -11,8 +11,8 @@ const { country, getLanguages, getCurrencies } = storeToRefs(countryStore)
   <dl v-if="country" class="border-y border-bunker">
     <CountryDetails title="Capital" :detail="country.capital?.toString()" />
     <CountryDetails title="Subregion" :detail="country.subregion" />
-    <CountryDetails v-if="country.languages" title="Language" :detail="getLanguages" />
-    <CountryDetails v-if="country.currencies" title="Currencies" :detail="getCurrencies" />
+    <CountryDetails title="Language" :detail="getLanguages" />
+    <CountryDetails title="Currencies" :detail="getCurrencies" />
     <CountryDetails title="Continents" :detail="country.continents?.toString()" />
   </dl>
 </template>

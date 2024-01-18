@@ -22,8 +22,6 @@ import { useCountriesStore } from '@/stores/CountriesStore'
 const countriesStore = useCountriesStore()
 
 const changeHandler = (e) => {
-  console.log('changed')
-  console.log(e.target.value)
   countriesStore.sortBy = e.target.value
 }
 </script>

@@ -7,7 +7,9 @@
       alt="hero image"
     />
     <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-      <Logo />
+      <router-link to="/">
+        <Logo />
+      </router-link>
     </div>
   </header>
 </template>

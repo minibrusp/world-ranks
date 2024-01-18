@@ -13,7 +13,7 @@
     :alt="altText"
   />
   <img
-    v-if="size === 'large'"
+    v-if="size === 'large' && source"
     class="max-w-[260px] min-h-[196px] rounded-xl"
     :src="source"
     :alt="altText"

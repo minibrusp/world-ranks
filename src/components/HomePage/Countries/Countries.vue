@@ -11,6 +11,8 @@
     <CountrySkeleton v-if="countriesStore.loading" />
     <CountrySkeleton v-if="countriesStore.loading" />
     <CountrySkeleton v-if="countriesStore.loading" />
+    <CountrySkeleton v-if="countriesStore.loading" />
+    <CountrySkeleton v-if="countriesStore.loading" />
 
     <Country
       v-else
@@ -26,11 +28,19 @@ import Country from '@/components/HomePage/Countries/Country'
 import CountrySkeleton from '@/components/HomePage/Countries/CountrySkeleton'
 import { useCountriesStore } from '@/stores/CountriesStore'
 import { storeToRefs } from 'pinia'
+import { onMounted, onUnmounted } from 'vue'
 
 const countriesStore = useCountriesStore()
 
 const { searchedCountry } = storeToRefs(countriesStore)
 
-// fetch countries
-countriesStore.getCountries()
+onMounted(() => {
+  // fetch countries
+  countriesStore.getCountries()
+})
+
+onUnmounted(() => {
+  // reset store
+  countriesStore.$reset()
+})
 </script>

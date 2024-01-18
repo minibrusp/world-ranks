@@ -46,13 +46,15 @@ export const useCountriesStore = defineStore('countriesStore', {
     },
     searchedCountry() {
       if (!this.search) return this.filteredCountries
-      return this.filteredCountries.filter((country) => {
+      const result = this.filteredCountries.filter((country) => {
         return (
           country.name.common.toLowerCase() == this.search.toLowerCase() ||
           country.region.toLowerCase() == this.search.toLowerCase() ||
           country.subregion?.toLowerCase() == this.search?.toLowerCase()
         )
       })
+      this.loading = false
+      return result
     },
     getTotalCountries() {
       return this.filteredCountries.length

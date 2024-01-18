@@ -7,14 +7,17 @@ export const useCountryStore = defineStore('countryStore', () => {
   const neighbor = ref([])
 
   const getLanguages = computed(() => {
-    if (!country.value) return 'n/a'
-    return Object.values(country.value.languages).toString().replaceAll(',', ', ')
+    return country.value.languages
+      ? Object.values(country.value.languages).toString().replaceAll(',', ', ')
+      : null
   })
 
   const getCurrencies = computed(() => {
-    return Object.values(country.value.currencies)
-      .flatMap((arr) => arr.name)
-      .toString()
+    return country.value.currencies
+      ? Object.values(country.value.currencies)
+          .flatMap((arr) => arr.name)
+          .toString()
+      : null
   })
 
   const getBorders = computed(() => {
@@ -32,6 +35,7 @@ export const useCountryStore = defineStore('countryStore', () => {
 
   async function getNeighbors() {
     loading.value = true
+
     const result = await Promise.all(
       country.value?.borders?.map(async (border) => {
         const res = await fetch(`https://restcountries.com/v3.1/alpha/${border}`)
@@ -39,10 +43,25 @@ export const useCountryStore = defineStore('countryStore', () => {
         return { ...data[0] }
       })
     )
-    console.log(result)
     neighbor.value = result
     loading.value = false
   }
 
-  return { country, getLanguages, getCountry, getCurrencies, getBorders, getNeighbors, neighbor }
+  function $reset() {
+    country.value = {}
+    loading.value = false
+    neighbor.value = []
+  }
+
+  return {
+    country,
+    getLanguages,
+    getCountry,
+    getCurrencies,
+    getBorders,
+    getNeighbors,
+    neighbor,
+    $reset,
+    loading
+  }
 })

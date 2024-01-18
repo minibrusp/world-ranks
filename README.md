@@ -1,35 +1,26 @@
-# world-ranks
+# DevChallenges's World-ranks challenge
 
-This template should help get you started developing with Vue 3 in Vite.
+![preview](./design/preview.webp)
 
-## Recommended IDE Setup
+## Design
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+| 640px                                   | 1024px                                   | 1280px                                  |
+| --------------------------------------- | ---------------------------------------- | --------------------------------------- |
+| ![640px](./design/home-page-mobile.jpg) | ![1024px](./design/home-page-tablet.jpg) | ![1280](./design/home-page-desktop.jpg) |
 
-## Customize configuration
+| 640px                                      | 1280px                                       |
+| ------------------------------------------ | -------------------------------------------- |
+| ![640px](./design/country-page-mobile.jpg) | ![1024px](./design/country-page-desktop.jpg) |
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Built with
 
-## Project Setup
+- Vue 3 (Composition API)
+- Pinia
+- TailwindCSS
+- Vite
+- Vue Router
 
-```sh
-npm install
-```
+## Project Links
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Live Site URL: [here](https://github-profile-beige.vercel.app/)
+- DevChallenges Solution URL: [here](https://devchallenges.io/solution/5051)
