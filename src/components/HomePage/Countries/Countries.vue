@@ -6,6 +6,7 @@
       <th class="text-xs font-medium py-4">Name</th>
       <th class="text-xs font-medium py-4">Population</th>
       <th class="text-xs font-medium py-4">Area(km&sup2;)</th>
+      <th class="text-xs font-medium py-4 hidden xl:block">Region</th>
     </tr>
     <CountrySkeleton v-if="countriesStore.loading" />
     <CountrySkeleton v-if="countriesStore.loading" />

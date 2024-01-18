@@ -6,14 +6,14 @@
         v-if="!countryStore.neighbor || countryStore.loading"
         class="bg-bunker w-[165px] h-[20px] inline-block rounded-xl"
       />
-      <span v-else>Neighbouring Countries</span>
+      <span v-else-if="countryStore.getBorders">Neighbouring Countries</span>
     </figcaption>
     <ul class="text-left flex flex-row flex-wrap justify-start items-center gap-4 sm:my-1">
-      <li v-if="!countryStore.neighbor || countryStore.loading"><CountryThumbnailSkeleton /></li>
-      <li v-if="!countryStore.neighbor || countryStore.loading"><CountryThumbnailSkeleton /></li>
-      <li v-if="!countryStore.neighbor || countryStore.loading"><CountryThumbnailSkeleton /></li>
-      <li v-if="!countryStore.neighbor || countryStore.loading"><CountryThumbnailSkeleton /></li>
-      <li v-if="!countryStore.neighbor || countryStore.loading"><CountryThumbnailSkeleton /></li>
+      <li v-if="countryStore.loading"><CountryThumbnailSkeleton /></li>
+      <li v-if="countryStore.loading"><CountryThumbnailSkeleton /></li>
+      <li v-if="countryStore.loading"><CountryThumbnailSkeleton /></li>
+      <li v-if="countryStore.loading"><CountryThumbnailSkeleton /></li>
+      <li v-if="countryStore.loading"><CountryThumbnailSkeleton /></li>
       <li v-else v-for="(neighbor, index) in countryStore.neighbor" :key="index">
         <CountryThumbnail :border="neighbor" />
       </li>

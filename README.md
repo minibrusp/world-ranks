@@ -22,5 +22,5 @@
 
 ## Project Links
 
-- Live Site URL: [here](https://github-profile-beige.vercel.app/)
-- DevChallenges Solution URL: [here](https://devchallenges.io/solution/5051)
+- Live Site URL: [here](https://world-ranks-theta-red.vercel.app/)
+- DevChallenges Solution URL: [here](https://devchallenges.io/solution/7596)

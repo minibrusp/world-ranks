@@ -36,8 +36,14 @@ export const useCountryStore = defineStore('countryStore', () => {
   async function getNeighbors() {
     loading.value = true
 
+    if (!country.value.borders) {
+      neighbor.value = []
+      loading.value = false
+      return
+    }
+
     const result = await Promise.all(
-      country.value?.borders?.map(async (border) => {
+      getBorders.value?.map(async (border) => {
         const res = await fetch(`https://restcountries.com/v3.1/alpha/${border}`)
         const data = await res.json()
         return { ...data[0] }

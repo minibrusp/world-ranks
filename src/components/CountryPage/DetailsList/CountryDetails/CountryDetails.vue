@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="detail"
     class="text-[13px] font-medium flex flex-row justify-between items-center px-4 py-6 border-b border-bunker last-of-type:border-transparent"
   >
     <dt>

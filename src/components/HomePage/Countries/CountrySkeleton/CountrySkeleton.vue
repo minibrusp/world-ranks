@@ -7,6 +7,9 @@
     <td class="pr-4"><div class="bg-bunker h-[11px] w-full block rounded-lg" /></td>
     <td class="pr-4"><div class="bg-bunker h-[11px] w-full block rounded-lg" /></td>
     <td class="pr-4"><div class="bg-bunker h-[11px] w-full block rounded-lg" /></td>
+    <td class="hidden pr-4 xl:inline">
+      <div class="bg-bunker h-[11px] w-full block rounded-lg" />
+    </td>
   </tr>
 </template>
 

@@ -18,6 +18,9 @@
       <span class="sm:hidden">{{ numeral(country.area).format('0.000a') }}</span>
       <span class="hidden sm:block">{{ country.area.toLocaleString() }}</span>
     </td>
+    <td>
+      <span class="hidden xl:block">{{ country.region }}</span>
+    </td>
   </tr>
 </template>
 
@@ -25,11 +28,14 @@
 import Flag from '@/components/Flag'
 import numeral from 'numeral'
 import { useRouter } from 'vue-router'
+import { useCountryStore } from '@/stores/CountryStore'
 
 const router = useRouter()
+const countryStore = useCountryStore()
 const { country } = defineProps(['country'])
 
 const clickHandler = () => {
+  countryStore.loading = true
   let name = country.name.common.toLowerCase()
   router.push({ name: 'country', params: { name } })
 }

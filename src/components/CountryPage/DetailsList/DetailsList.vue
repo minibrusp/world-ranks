@@ -8,7 +8,7 @@ const { country, getLanguages, getCurrencies } = storeToRefs(countryStore)
 </script>
 
 <template>
-  <dl v-if="country" class="border-y border-bunker">
+  <dl class="border-y border-bunker">
     <CountryDetails title="Capital" :detail="country.capital?.toString()" />
     <CountryDetails title="Subregion" :detail="country.subregion" />
     <CountryDetails title="Language" :detail="getLanguages" />
